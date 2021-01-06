@@ -1,0 +1,67 @@
+:root {
+	/* colors */
+	--clr-primary-100: #a29f9e;
+	--clr-primary-400: #4f68c6;
+
+	/* spacing */
+	--spacer: 1.5em;
+
+	/* font weight */
+	--fw-400: 400;
+	--fw-500: 500;
+	--fw-700: 700;
+
+	/* font size */
+	--fs-300: 0.8rem;
+	--fs-400: 1rem;
+	--fs-500: 1.25rem;
+	--fs-600: 2rem;
+	--fs-900: 5rem;
+
+	/* font family */
+	--ff-body: "Roboto", sans-serif;
+}
+
+/* ==========================================================
+Global styles
+========================================================== */
+body {
+	background-color: #799bcf;
+	font-family: var(--ff-body);
+	font-size: var(--fs-400);
+	font-weight: var(--fw-400);
+	line-height: 1.8;
+	color: var(--clr-primary-100);
+}
+
+form {
+	border-radius: 1em;
+	display: flex;
+	justify-content: center;
+	padding: 2em;
+	width: 30%;
+	margin-top: 15em;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #fff;
+}
+
+button {
+	border: solid 2px var(--clr-primary-400);
+	background-color: inherit;
+}
+
+button:first-of-type {
+	border-radius: 0.5em 0 0 0.5em;
+	border-right: 0;
+}
+
+button:last-of-type {
+	border-radius: 0 0.5em 0.5em 0;
+	border-left: 0;
+}
+
+select {
+	border: solid 2px var(--clr-primary-400);
+	width: 100%;
+}
