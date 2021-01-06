@@ -32,28 +32,28 @@ body {
 	font-size: var(--fs-400);
 	font-weight: var(--fw-400);
 	line-height: 1.8;
-	color: var(--clr-primary-100);
 	text-align: center;
+	color: var(--clr-primary-100);
 }
 
 section {
-	background-color: #fff;
 	padding-top: 3em;
 	padding-right: 4em;
 	padding-bottom: 3em;
 	padding-left: 4em;
+	background-color: #fff;
 }
 
 h2,
 .offer {
-	color: var(--clr-primary-400);
 	font-weight: var(--fw-700);
 	line-height: 0.7;
+	color: var(--clr-primary-400);
 }
 
 h2 {
-	text-transform: uppercase;
 	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
 /* ==========================================================
@@ -61,8 +61,8 @@ Utilities
 ========================================================== */
 .container {
 	margin-top: 15%;
-	margin-left: 15%;
 	margin-right: 15%;
+	margin-left: 15%;
 }
 
 .flow-content > * + * {
@@ -71,11 +71,13 @@ Utilities
 
 .split {
 	display: flex;
-	gap: calc(var(--spacer) * 4);
+	gap: calc(var(--spacer) * 2);
 }
 
 .split > * {
+	display: flex;
 	flex-basis: 100%;
+	flex-direction: column;
 }
 
 /* ==========================================================
@@ -85,10 +87,14 @@ Blocks
 /* Price card */
 
 img {
-	width: 4rem;
-	margin-bottom: 3em;
-	margin-left: auto;
+	width: 5rem;
 	margin-right: auto;
+	margin-bottom: 2em;
+	margin-left: auto;
+}
+
+.offer {
+	margin-top: max(1.5em, auto);
 }
 
 .price {
@@ -97,4 +103,13 @@ img {
 
 .dollor {
 	vertical-align: top;
+}
+
+li {
+	padding: 2em;
+	border-radius: 1em;
+}
+
+li:hover {
+	background-color: rgba(215, 210, 202, 0.2);
 }
