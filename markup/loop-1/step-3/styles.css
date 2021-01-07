@@ -1,0 +1,102 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	background-color: #14957b;
+}
+
+section {
+	position: relative;
+	width: 40em;
+	background-color: white;
+	padding-top: 2em;
+	padding-left: 3em;
+	padding-right: 3em;
+	padding-bottom: 15em;
+	border-radius: 0.5em;
+}
+
+img {
+	width: 2em;
+	height: 2em;
+}
+
+a {
+	border-radius: 50%;
+	border: solid 1px grey;
+	padding: 0.5em;
+	position: relative; /* For positioning the pseudo-element */
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
+}
+
+a::before {
+	/* Position the pseudo-element. */
+	content: " ";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	border-radius: 50%;
+
+	/* Create the box shadow at expanded size. */
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+
+	/* Hidden by default. */
+	opacity: 0;
+	transition: opacity 500ms;
+}
+
+a:hover::before {
+	/* Show the pseudo-element on hover. */
+	opacity: 1;
+}
+
+.split {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5em;
+}
+
+.flow > * + * {
+	margin-top: 2rem;
+}
+
+table {
+	margin-top: 5em;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th {
+	text-align: left;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 1.25rem;
+	padding-top: 0.75em;
+	padding-bottom: 0.75em;
+}
+
+.price {
+	padding-top: 0.75em;
+	padding-bottom: 0.75em;
+	text-align: right;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.card__background {
+	background: url("./img/bicycle.png") no-repeat 50% 0;
+	background-size: cover;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 20em;
+}
