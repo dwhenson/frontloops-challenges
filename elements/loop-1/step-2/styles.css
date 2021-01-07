@@ -1,0 +1,78 @@
+body {
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	background-color: #2575b0;
+}
+
+form {
+	background-color: white;
+	border-radius: 1em;
+	overflow: hidden;
+	width: 40em;
+	padding: 2em;
+}
+
+fieldset {
+	border: none;
+}
+
+label {
+	width: 100%;
+}
+
+.flow > * + * {
+	margin-top: 2em;
+}
+
+.index {
+	display: flex;
+	align-items: flex-end;
+	gap: 1em;
+}
+
+/* Form one */
+.index input {
+	width: 100%;
+	flex: 2 0 auto;
+	border: none;
+	border-bottom: 2px solid grey;
+	padding: 0.5em;
+}
+
+.index button {
+	border: none;
+	flex: 1 0 auto;
+	padding: 0.75em 1em;
+	border-radius: 0.5em;
+}
+
+/* Form 2 */
+.tabs {
+	display: flex;
+}
+
+.tabs > * {
+	flex-basis: 100%;
+	padding: 0.75em 1em;
+	text-transform: uppercase;
+	border: none;
+	background: inherit;
+	font-weight: 400;
+}
+
+.text {
+	display: grid;
+}
+
+.text > * {
+	margin-top: 1em;
+	grid-area: 1 / 1 / 1/ 1;
+	text-align: center;
+	/* display: none; */
+}
