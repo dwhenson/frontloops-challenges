@@ -15,9 +15,21 @@ function removeSelected(elements) {
 	});
 }
 
+function removeAttribute(elements, attribute) {
+	elements.forEach((element) => {
+		element.removeAttribute(attribute);
+	});
+}
+
 function setHidden(elements) {
 	elements.forEach((element) => {
 		element.setAttribute("hidden", "true");
+	});
+}
+
+function setAttribute(elements, attribute) {
+	elements.forEach((element) => {
+		element.setAttribute(attribute, "true");
 	});
 }
 
@@ -25,15 +37,15 @@ function tabChangeSections(event) {
 	if (!event.target.closest("a")) return;
 
 	// remove aria-selected from tabs and set on selected
-	removeSelected(tabArray);
-	setHidden(contentArray);
+	removeAttribute(tabArray, "aria-selected");
+	setAttribute(contentArray, "hidden");
 
 	// add aria-selected to selected tab
 	event.target.setAttribute("aria-selected", "true");
 	// add aria-selected to associated section and remove hidden attribute
-	const section = content.querySelector(`#content-${event.target.dataset.tab}`);
-	section.setAttribute("aria-selected", "true");
-	section.removeAttribute("hidden");
+	const section = content.querySelectorAll(`#content-${event.target.dataset.tab}`);
+	setAttribute(section, "aria-selected");
+	removeAttribute(section, "hidden");
 }
 
 function indexChangeSections(event) {
