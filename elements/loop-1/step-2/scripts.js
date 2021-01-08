@@ -26,6 +26,13 @@ function tabChangeSections(event) {
 function indexChangeSections(event) {
 	event.preventDefault();
 	if (!event.target.closest("button")) return;
+	const indexValue = input.value - 1;
+	if (indexValue > tabArray.length || isNaN(indexValue)) {
+		alert(`Please select a number between 1 and ${tabArray.length}`);
+		input.value = "";
+		input.focus();
+		return;
+	}
 
 	contentArray.forEach((section) => {
 		section.removeAttribute("aria-selected");
@@ -36,7 +43,6 @@ function indexChangeSections(event) {
 		tab.removeAttribute("aria-selected");
 	});
 
-	const indexValue = input.value - 1;
 	contentArray[indexValue].setAttribute("aria-selected", "true");
 	contentArray[indexValue].removeAttribute("hidden");
 	tabArray[indexValue].setAttribute("aria-selected", "true");
