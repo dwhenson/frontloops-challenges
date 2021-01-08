@@ -1,23 +1,36 @@
+/* =================== Variables ====================== */
+/* ==================================================== */
+
 const tabArray = Array.from(document.querySelectorAll("[role=tab]"));
 const content = document.querySelector("#contents");
 const contentArray = Array.from(document.querySelectorAll("[role=tabpanel]"));
 const input = document.querySelector("#tab-index");
 
+/* =================== Functions ====================== */
+/* ==================================================== */
+// CHECK can these be updated to be more flexable and take single values?
+function removeSelected(elements) {
+	elements.forEach((element) => {
+		element.removeAttribute("aria-selected");
+	});
+}
+
+function setHidden(elements) {
+	elements.forEach((element) => {
+		element.setAttribute("hidden", "true");
+	});
+}
+
 function tabChangeSections(event) {
 	if (!event.target.closest("a")) return;
 
-	// remove all aria-selected and add to clicked element
-	tabArray.forEach((tab) => {
-		tab.removeAttribute("aria-selected");
-	});
+	// remove aria-selected from tabs and set on selected
+	removeSelected(tabArray);
+	setHidden(contentArray);
+
+	// add aria-selected to selected tab
 	event.target.setAttribute("aria-selected", "true");
-
-	// hide all sections and show/aria-select relevant section
-	contentArray.forEach((section) => {
-		section.removeAttribute("aria-selected");
-		section.setAttribute("hidden", "true");
-	});
-
+	// add aria-selected to associated section and remove hidden attribute
 	const section = content.querySelector(`#content-${event.target.dataset.tab}`);
 	section.setAttribute("aria-selected", "true");
 	section.removeAttribute("hidden");
@@ -36,20 +49,13 @@ function indexChangeSections(event) {
 		return;
 	}
 
-	// TODO refactor code to remove duplication
-
-	// remove aria-selected from sections and hidden attribute
-	contentArray.forEach((section) => {
-		section.removeAttribute("aria-selected");
-		section.setAttribute("hidden", "true");
-	});
-
-	// remove aria-selected from tabs
-	tabArray.forEach((tab) => {
-		tab.removeAttribute("aria-selected");
-	});
+	// remove aria-selected from sections, tabs and add hidden attribute to sections
+	removeSelected(tabArray);
+	removeSelected(tabArray);
+	setHidden(contentArray);
 
 	// set aria-selected and remove hidden attributes from selected tabs and sections
+	// CHECK possibility of refactoring with a setAttribute function?
 	contentArray[indexValue].setAttribute("aria-selected", "true");
 	contentArray[indexValue].removeAttribute("hidden");
 	tabArray[indexValue].setAttribute("aria-selected", "true");
@@ -60,5 +66,8 @@ function clickHandler(event) {
 	indexChangeSections(event);
 	tabChangeSections(event);
 }
+
+/* =============  Inits and Event Listener  =========== */
+/* ==================================================== */
 
 document.addEventListener("click", clickHandler);
