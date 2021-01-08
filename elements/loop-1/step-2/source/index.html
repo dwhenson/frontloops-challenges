@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tabs</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="tabs js-tabs">
+            <form action="#" class="tabs__top js-tabs__change-form">
+                <input class="input js-tabs__change-field" name="index" type="number" placeholder="Enter tab index" />
+                <div class="tabs__change">
+                    <button class="button">Change tab</button>
+                </div>
+            </form>
+
+            <div class="tabs__buttons">
+                <div class="tabs__button tabs__button--active js-tabs__button" data-tab-index="1">Positive</div>
+                <div class="tabs__button js-tabs__button" data-tab-index="2">Negative</div>
+                <div class="tabs__button js-tabs__button" data-tab-index="3">Neutral</div>
+            </div>
+            <div class="tabs__content tabs__content--active js-tabs__content" data-tab-index="1">Positive content</div>
+            <div class="tabs__content js-tabs__content" data-tab-index="2">Negative content</div>
+            <div class="tabs__content js-tabs__content" data-tab-index="3">Neutral content</div>
+        </div>
+    </div>
+
+    <!--
+        It's inlined here because js files can't be sent with email (even in zip). Normally would be in a separate file.
+    -->
+    <script>
+        (function() {
+            const modifiers = {
+                buttonActive: 'tabs__button--active',
+                contentActive: 'tabs__content--active'
+            };
+
+            const attributes = {
+                tabIndex: 'data-tab-index'
+            };
+
+            const elRoot = document.querySelector('.js-tabs');
+            const elsButton = elRoot.querySelectorAll('.js-tabs__button');
+            const elsContent = elRoot.querySelectorAll('.js-tabs__content');
+            const elChangeForm = elRoot.querySelector('.js-tabs__change-form');
+            const elChangeField = elRoot.querySelector('.js-tabs__change-field');
+
+            // Function to change tab by index
+            // Tab indexes are stored in the data attribute of each tab, to be able to use custom names for them
+            const changeTab = index => {
+                // Remove active class from all buttons, then add active class to a button with passed index
+                elsButton.forEach(el => {
+                    el.classList.remove(modifiers.buttonActive);
+                    if (el.getAttribute(attributes.tabIndex) === index) {
+                        el.classList.add(modifiers.buttonActive);
+                    }
+                });
+
+                // Remove active class from all contents, then add active class to a content with passed index
+                elsContent.forEach(el => {
+                    el.classList.remove(modifiers.contentActive);
+                    if (el.getAttribute(attributes.tabIndex) === index) {
+                        el.classList.add(modifiers.contentActive);
+                    }
+                });
+            };
+
+            elsButton.forEach(el => {
+                // Whenever you click a button
+                el.addEventListener('click', e => {
+                    // Get its index
+                    const tabIndex = el.getAttribute(attributes.tabIndex);
+
+                    e.preventDefault();
+                    // And change tabs to that index
+                    changeTab(tabIndex);
+                });
+            });
+
+            // Submit is used here instead of button click to allow users press enter to change tabs
+            elChangeForm.addEventListener('submit', e => {
+                // Get index from input
+                const value = elChangeField.value;
+                const contentArr = [].slice.call(elsContent);
+                // Check if index is valid
+                const hasIndex = !!contentArr.find(el => el.getAttribute(attributes.tabIndex) === value);
+
+                e.preventDefault();
+                // Clear input
+                elChangeField.value = '';
+
+                // Return if index is invalid, execution of the function will be stopped
+                if (!hasIndex) {
+                    alert('Index is invalid');
+                    return;
+                }
+
+                // Otherwise change tab to the index passed from input
+                changeTab(value);
+            });
+        })();
+    </script>
+</body>
+</html>
