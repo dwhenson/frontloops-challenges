@@ -46,7 +46,7 @@ form {
 }
 
 /* ==========================================================
-Utilites
+Utilities
 ========================================================== */
 
 .accent {
@@ -92,7 +92,7 @@ select {
 	color: inherit;
 }
 
-/* Adjust form visability */
+/* Adjust form visibility */
 @media (max-width: 800px) {
 	.container {
 		width: 80%;
