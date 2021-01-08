@@ -73,10 +73,6 @@ label {
 	border: none;
 }
 
-[aria-selected] {
-	font-weight: 700;
-}
-
 .contents {
 	display: grid;
 }
@@ -85,4 +81,8 @@ label {
 	margin-top: 1em;
 	grid-area: 1 / 1 / 1/ 1;
 	text-align: center;
+}
+
+[aria-selected] {
+	font-weight: 700;
 }

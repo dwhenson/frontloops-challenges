@@ -1,17 +1,26 @@
-const tabby = document.querySelector(".tabby");
-const tabs = Array.from(document.querySelectorAll(".tab"));
-const content = Array.from(document.querySelectorAll(".content"));
+const tabForm = document.querySelector("#tabby");
+const tabArray = Array.from(document.querySelectorAll("[role=tab]"));
+const content = document.querySelector("#contents");
+const contentArray = Array.from(document.querySelectorAll("[role=tabpanel]"));
 
 function clickHandler(event) {
-	if (!event.target.closest("button")) return;
-	event.preventDefault();
+	if (!event.target.closest("a")) return;
 
-	tabs.forEach((tab) => {
-		console.log(tab);
-		tab.firstElementChild.removeAttribute("aria-selected");
+	// remove all aria-selected and add to clicked element
+	tabArray.forEach((tab) => {
+		tab.removeAttribute("aria-selected");
+	});
+	event.target.setAttribute("aria-selected", "true");
+
+	// hide all sections and show/aria-select relevant section
+	contentArray.forEach((section) => {
+		section.removeAttribute("aria-selected");
+		section.setAttribute("hidden", "true");
 	});
 
-	event.target.setAttribute("aria-selected", "true");
+	const section = content.querySelector(`#content-${event.target.dataset.tab}`);
+	section.setAttribute("aria-selected", "true");
+	section.removeAttribute("hidden");
 }
 
-tabby.addEventListener("click", clickHandler);
+tabForm.addEventListener("click", clickHandler);

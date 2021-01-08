@@ -13,6 +13,7 @@
 		/>
 		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="styles.css" />
+		<script defer src="scripts.js"></script>
 	</head>
 	<body>
 		<form class="flow" action="#">
@@ -26,7 +27,7 @@
 			<fieldset id="tabby">
 				<ul class="tabs" role="tablist">
 					<li role="presentation">
-						<a id="tab-positive" data-tab="positive" role="tab">Positive</a>
+						<a id="tab-positive" data-tab="positive" role="tab" aria-selected="true">Positive</a>
 					</li>
 					<li role="presentation">
 						<a id="tab-negative" data-tab="negative" role="tab">Negative</a>
@@ -67,6 +68,5 @@
 				</section>
 			</fieldset>
 		</form>
-		<script src="scripts.js"></script>
 	</body>
 </html>
