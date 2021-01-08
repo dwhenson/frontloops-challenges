@@ -59,20 +59,30 @@ label {
 
 .tabs > * {
 	flex-basis: 100%;
-	padding: 0.75em 1em;
-	text-transform: uppercase;
-	border: none;
-	background: inherit;
-	font-weight: 400;
 }
 
-.text {
+.tabs button {
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	padding: 0.75em 1em;
+	text-transform: uppercase;
+	width: 100%;
+	color: inherit;
+	background-color: inherit;
+	border: none;
+}
+
+[aria-selected] {
+	font-weight: 700;
+}
+
+.contents {
 	display: grid;
 }
 
-.text > * {
+.contents > * {
 	margin-top: 1em;
 	grid-area: 1 / 1 / 1/ 1;
 	text-align: center;
-	/* display: none; */
 }

@@ -23,17 +23,48 @@
 				<button class="change">Change tab</button>
 			</fieldset>
 			<fieldset class="tabby">
-				<div class="tabs">
-					<button class="tab">Positive</button>
-					<button class="tab">Negative</button>
-					<button class="tab">Neutral</button>
-				</div>
-				<div class="text">
-					<p>Positive content</p>
-					<p>Negative content</p>
-					<p>Neutral content</p>
-				</div>
+				<ul class="tabs" role="tablist">
+					<li class="tab" role="presentation">
+						<button id="tab-positive" role="tab">Positive</button>
+					</li>
+					<li class="tab" role="presentation">
+						<button id="tab-negative" role="tab">Negative</button>
+					</li>
+					<li class="tab" role="presentation">
+						<button id="tab-neutral" role="tab">Neutral</button>
+					</li>
+				</ul>
+				<section class="contents">
+					<section
+						id="content-positive"
+						class="content"
+						role="tabpanel"
+						aria-labelledby="tab-positive"
+						hidden
+					>
+						<p>Positive content</p>
+					</section>
+					<section
+						id="content-negative"
+						class="content"
+						role="tabpanel"
+						aria-labelledby="tab-negative"
+						aria-selected="true"
+					>
+						<p>Negative content</p>
+					</section>
+					<section
+						id="content-neutral"
+						class="content"
+						role="tabpanel"
+						aria-labelledby="tab-neutral"
+						hidden
+					>
+						<p>Neutral content</p>
+					</section>
+				</section>
 			</fieldset>
 		</form>
+		<script src="scripts.js"></script>
 	</body>
 </html>
