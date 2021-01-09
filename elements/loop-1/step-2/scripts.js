@@ -8,31 +8,39 @@ const input = document.querySelector("#tab-index");
 
 /* =================== Functions ====================== */
 /* ==================================================== */
-// CHECK can these be updated to be more flexable and take single values?
-function removeSelected(elements) {
-	elements.forEach((element) => {
-		element.removeAttribute("aria-selected");
-	});
-}
 
+/* Helper Functions
+/* ==================================================== */
+
+/**
+ * Removes an attribute on an array
+ * @param   {array}  elements   An array of elements
+ * @param   {string}  attribute  The attribute to remove
+ */
 function removeAttribute(elements, attribute) {
 	elements.forEach((element) => {
 		element.removeAttribute(attribute);
 	});
 }
 
-function setHidden(elements) {
-	elements.forEach((element) => {
-		element.setAttribute("hidden", "true");
-	});
-}
-
+/**
+ * Sets an attribute on an array
+ * @param   {array}  elements   An array of elements
+ * @param   {string}  attribute  The attribute to set
+ */
 function setAttribute(elements, attribute) {
 	elements.forEach((element) => {
 		element.setAttribute(attribute, "true");
 	});
 }
 
+/* Main App Functions
+/* ==================================================== */
+
+/**
+ * Shows clicked tab and associated content
+ * @param   {object}  event  The event object
+ */
 function tabChangeSections(event) {
 	if (!event.target.closest("a")) return;
 
@@ -48,6 +56,10 @@ function tabChangeSections(event) {
 	removeAttribute(section, "hidden");
 }
 
+/**
+ * Change section content based on index
+ * @param   {object}  event  The event object
+ */
 function indexChangeSections(event) {
 	event.preventDefault();
 	if (!event.target.closest("button")) return;
@@ -62,24 +74,25 @@ function indexChangeSections(event) {
 	}
 
 	// remove aria-selected from sections, tabs and add hidden attribute to sections
-	removeSelected(tabArray);
-	removeSelected(tabArray);
-	setHidden(contentArray);
+	removeAttribute(tabArray, "aria-selected");
+	setAttribute(contentArray, "hidden");
 
 	// set aria-selected and remove hidden attributes from selected tabs and sections
-	// CHECK possibility of refactoring with a setAttribute function?
 	contentArray[indexValue].setAttribute("aria-selected", "true");
 	contentArray[indexValue].removeAttribute("hidden");
 	tabArray[indexValue].setAttribute("aria-selected", "true");
 	tabArray[indexValue].removeAttribute("hidden");
 }
 
+/* Click Handlers
+/* ==================================================== */
+
 function clickHandler(event) {
 	indexChangeSections(event);
 	tabChangeSections(event);
 }
 
-/* =============  Inits and Event Listener  =========== */
+/* =============  Inits and Event Listeners  ========== */
 /* ==================================================== */
 
 document.addEventListener("click", clickHandler);
