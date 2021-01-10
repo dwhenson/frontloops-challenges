@@ -9,27 +9,26 @@
 		<link rel="stylesheet" href="./reset.css" />
 		<link rel="stylesheet" href="./styles.css" />
 	</head>
-	<body>
+	<body class="flow-section">
 		<section>
-			<header>
+			<header class="container">
 				<h2>Mark Zukerburher</h2>
-				<p aria-label="close">X</p>
+				<button aria-label="close">&#10005</button>
 			</header>
-			<h2>Today</h2>
-			<main>
-				<div class="message">
+			<main class="container flow-section">
+				<div class="message sent">
 					<time>10:52</time>
 					<p>Hi Mark! Sold anyone's data to the government lately?</p>
 				</div>
-				<div class="message">
+				<div class="message received">
 					<time>10:53</time>
 					<p>No Dave, I don't do that any more</p>
 				</div>
-				<div class="message">
+				<div class="message sent">
 					<time>10:54</time>
 					<p>Why not?</p>
 				</div>
-				<div class="message">
+				<div class="message received">
 					<time>10:55</time>
 					<p>I got enough cash already thanks</p>
 				</div>
@@ -37,10 +36,11 @@
 					<p>You were blocked by the user</p>
 				</div>
 			</main>
-			<footer>
-				<p>Oh man don't be mean!</p>
+			<form class="container">
+				<label for="message"></label>
+				<input type="text" name="message" id="message" />
 				<button type="submit">Send</button>
-			</footer>
+			</form>
 		</section>
 	</body>
 </html>
