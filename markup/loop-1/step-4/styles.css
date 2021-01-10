@@ -6,5 +6,41 @@ body {
 	height: 100vh;
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
-	background-color: #14957b;
+
+/* Header
+			================================================== */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	background-color: hsla(217, 57%, 60%, 1);
+	color: white;
+	text-transform: uppercase;
+	font-size: 0.6em;
+	letter-spacing: 1px;
+	align-items: center;
+}
+
+header h2 {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+header h2::before {
+	content: "";
+	width: 0.5em;
+	height: 0.5em;
+	border-radius: 50%;
+	display: inline-block;
+	background-color: white;
+	margin-right: 1em;
+	color: white;
+}
+
+header button {
+	background-color: inherit;
+	border: none;
+	color: inherit;
+	font-size: 1.5rem;
+}
 }
