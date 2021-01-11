@@ -54,6 +54,7 @@ header {
 	text-transform: uppercase;
 	font-size: 0.6em;
 	letter-spacing: 1px;
+	align-items: center;
 }
 
 header h2 {
@@ -76,7 +77,7 @@ header button {
 	background-color: inherit;
 	border: none;
 	color: inherit;
-	font-size: 1.5rem;
+	font-size: 2rem;
 }
 
 /* Messages
@@ -103,9 +104,34 @@ header button {
 }
 
 .message p {
+	position: relative;
 	background-color: var(--bg, hsla(106, 0%, 94%, 1));
 	padding: 1em;
 	margin-top: 0.25em;
+}
+
+.message.sent p::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -10px;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 5px;
+	border-right-color: hsla(212, 45%, 92%, 1);
+	border-top-color: hsla(212, 45%, 92%, 1);
+}
+
+.message.message.received p::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -10px;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 5px;
+	border-left-color: hsla(106, 0%, 94%, 1);
+	border-top-color: hsla(106, 0%, 94%, 1);
 }
 
 .message.sent p {
@@ -137,9 +163,11 @@ form input {
 	padding-top: 1em;
 	padding-bottom: 1em;
 	flex-basis: 100%;
+	margin-top: 0.5em;
 }
 
 form button {
+	margin-top: 0.5em;
 	border: none;
 	color: hsla(217, 57%, 60%, 1);
 	background-color: inherit;
