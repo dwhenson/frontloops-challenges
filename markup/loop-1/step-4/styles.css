@@ -18,6 +18,11 @@ section {
 	width: 30em;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+}
+
 /* ==================================================
 	 Utilities
 	 ================================================== */
@@ -79,13 +84,18 @@ header button {
 	 ================================================== */
 
 .message {
-	/* FIX Width is not working */
-	max-width: 75%;
+	width: fit-content;
 	font-weight: 500;
 }
 
 .message.received {
-	margin-left: auto;
+	margin-left: 25%;
+	align-self: flex-end;
+}
+
+.message.sent {
+	align-self: flex-start;
+	margin-right: 25%;
 }
 
 .message time {
@@ -101,8 +111,16 @@ header button {
 
 .message.sent p {
 	--bg: hsla(212, 45%, 92%, 1);
+
+	border-radius: 0 0.5em 0.5em 0.5em;
+}
+
+.message.received p {
+	border-radius: 0.5em 0 0.5em 0.5em;
 }
 
 .message.block p {
 	--bg: hsla(0, 96%, 86%, 1);
+
+	border-radius: 0.5em;
 }
