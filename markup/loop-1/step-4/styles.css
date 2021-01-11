@@ -8,14 +8,14 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
+	background: linear-gradient(#dce6ef, #86a6c3);
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
-	background: linear-gradient(#dce6ef, #86a6c3);
 }
 
 section {
-	background-color: white;
 	width: 30em;
+	background-color: white;
 }
 
 main {
@@ -48,13 +48,13 @@ main {
 
 header {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
 	background-color: hsla(217, 57%, 60%, 1);
-	color: white;
-	text-transform: uppercase;
 	font-size: 0.6em;
 	letter-spacing: 1px;
-	align-items: center;
+	text-transform: uppercase;
+	color: white;
 }
 
 header h2 {
@@ -63,21 +63,21 @@ header h2 {
 }
 
 header h2::before {
-	content: "";
+	display: inline-block;
 	width: 0.5em;
 	height: 0.5em;
 	border-radius: 50%;
-	display: inline-block;
-	background-color: white;
 	margin-right: 1em;
+	background-color: white;
 	color: white;
+	content: "";
 }
 
 header button {
-	background-color: inherit;
 	border: none;
-	color: inherit;
+	background-color: inherit;
 	font-size: 2rem;
+	color: inherit;
 }
 
 /* Messages
@@ -89,8 +89,8 @@ header button {
 }
 
 .message.received {
-	margin-left: 25%;
 	align-self: flex-end;
+	margin-left: 25%;
 }
 
 .message.sent {
@@ -99,39 +99,36 @@ header button {
 }
 
 .message time {
-	color: grey;
 	font-size: 0.8em;
+	color: grey;
 }
 
 .message p {
 	position: relative;
-	background-color: var(--bg, hsla(106, 0%, 94%, 1));
 	padding: 1em;
 	margin-top: 0.25em;
+	background-color: var(--bg, hsla(106, 0%, 94%, 1));
+}
+
+.message p::after {
+	position: absolute;
+	top: 0;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent;
+	content: "";
 }
 
 .message.sent p::after {
-	content: "";
-	position: absolute;
-	top: 0;
 	left: -10px;
-	border-color: transparent;
-	border-style: solid;
-	border-width: 5px;
-	border-right-color: hsla(212, 45%, 92%, 1);
 	border-top-color: hsla(212, 45%, 92%, 1);
+	border-right-color: hsla(212, 45%, 92%, 1);
 }
 
-.message.message.received p::after {
-	content: "";
-	position: absolute;
-	top: 0;
+.message.received p::after {
 	right: -10px;
-	border-color: transparent;
-	border-style: solid;
-	border-width: 5px;
-	border-left-color: hsla(106, 0%, 94%, 1);
 	border-top-color: hsla(106, 0%, 94%, 1);
+	border-left-color: hsla(106, 0%, 94%, 1);
 }
 
 .message.sent p {
@@ -154,26 +151,26 @@ header button {
 	 ================================================== */
 
 form {
-	border-top: 1px solid lightgray;
 	display: flex;
+	border-top: 1px solid lightgray;
 }
 
 form input {
-	border: none;
+	flex-basis: 100%;
 	padding-top: 1em;
 	padding-bottom: 1em;
-	flex-basis: 100%;
+	border: none;
 	margin-top: 0.5em;
 }
 
 form button {
-	margin-top: 0.5em;
-	border: none;
-	color: hsla(217, 57%, 60%, 1);
-	background-color: inherit;
-	padding-left: 1em;
 	padding-right: 1em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+	padding-left: 1em;
+	border: none;
+	margin-top: 0.5em;
+	background-color: inherit;
 	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: hsla(217, 57%, 60%, 1);
 }
