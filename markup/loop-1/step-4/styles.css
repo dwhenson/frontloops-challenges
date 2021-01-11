@@ -39,7 +39,7 @@ section {
 	 ================================================== */
 
 /* Header
-			================================================== */
+	 ================================================== */
 
 header {
 	display: flex;
@@ -74,4 +74,35 @@ header button {
 	color: inherit;
 	font-size: 1.5rem;
 }
+
+/* Messages
+	 ================================================== */
+
+.message {
+	/* FIX Width is not working */
+	max-width: 75%;
+	font-weight: 500;
+}
+
+.message.received {
+	margin-left: auto;
+}
+
+.message time {
+	color: grey;
+	font-size: 0.8em;
+}
+
+.message p {
+	background-color: var(--bg, hsla(106, 0%, 94%, 1));
+	padding: 1em;
+	margin-top: 0.25em;
+}
+
+.message.sent p {
+	--bg: hsla(212, 45%, 92%, 1);
+}
+
+.message.block p {
+	--bg: hsla(0, 96%, 86%, 1);
 }
