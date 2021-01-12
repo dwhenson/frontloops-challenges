@@ -51,7 +51,9 @@ function tabChangeSections(event) {
 	// add aria-selected to selected tab
 	event.target.setAttribute("aria-selected", "true");
 	// add aria-selected to associated section and remove hidden attribute
-	const section = content.querySelectorAll(`#content-${event.target.dataset.tab}`);
+	const section = content.querySelectorAll(
+		`#content-${event.target.dataset.tab}`
+	);
 	setAttribute(section, "aria-selected");
 	removeAttribute(section, "hidden");
 }
@@ -66,7 +68,7 @@ function indexChangeSections(event) {
 	const indexValue = input.value - 1;
 
 	// if the number or value is invalid throw an error
-	if (indexValue > tabArray.length || isNaN(indexValue)) {
+	if (indexValue > tabArray.length || Number.isNaN(indexValue)) {
 		alert(`Please select a number between 1 and ${tabArray.length}`);
 		input.value = "";
 		input.focus();
