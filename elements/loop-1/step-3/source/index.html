@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Random switches</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container js-switch">
+			<label class="switch">
+				<input type="checkbox" class="switch__input js-switch__item" />
+				<div class="switch__field"></div>
+			</label>
+			<label class="switch">
+				<input type="checkbox" class="switch__input js-switch__item" />
+				<div class="switch__field"></div>
+			</label>
+			<label class="switch">
+				<input type="checkbox" class="switch__input js-switch__item" />
+				<div class="switch__field"></div>
+			</label>
+			<label class="switch">
+				<input type="checkbox" class="switch__input js-switch__item" />
+				<div class="switch__field"></div>
+			</label>
+			<label class="switch">
+				<input type="checkbox" class="switch__input js-switch__item" />
+				<div class="switch__field"></div>
+			</label>
+		</div>
+
+		<!--
+        It's inlined here because js files can't be sent with email (even in zip). Normally would be in a separate file.
+    -->
+		<script>
+			(function () {
+				const elRoot = document.querySelector(".js-switch");
+				const elsItem = elRoot.querySelectorAll(".js-switch__item");
+
+				elsItem.forEach((el) => {
+					// Whenever you change switcher state
+					// (change is here because they are implemented as custom checkboxes)
+					el.addEventListener("change", (e) => {
+						const elTarget = e.target;
+
+						// Get all elements
+						elsItem.forEach((el) => {
+							// Ignore changed element
+							if (el === elTarget) return;
+
+							// For others, set checked state randomly
+							// Math.Random generates random number from 0 to 1
+							// It's compared with 0.6 here just to increase the input chance to be switched off
+							const random = Math.random();
+							el.checked = random > 0.6;
+						});
+					});
+				});
+			})();
+		</script>
+	</body>
+</html>
