@@ -1,4 +1,4 @@
-const toggles = [...document.querySelectorAll(".slider")];
+const toggles = [...document.querySelectorAll("input")];
 const list = document.querySelector("ul");
 
 function randomBoolean() {
@@ -6,17 +6,11 @@ function randomBoolean() {
 }
 
 function clickHandler(event) {
-	const uncheckedToggles = toggles.filter(
-		(toggle) => toggle.index !== event.target.id
-	);
-	uncheckedToggles.forEach((toggle) => {
-		if (randomBoolean()) {
-			toggle.previousElementSibling.checked
-				? toggle.previousElementSibling.removeAttribute("checked")
-				: toggle.previousElementSibling.setAttribute("checked", true);
-		}
+	// if (!event.target.closest(".toggles")) return;
+	const filtered = toggles.filter((item) => item.id !== event.target.id);
+	filtered.forEach((input) => {
+		randomBoolean() && (input.checked = !input.checked);
 	});
-	console.log(uncheckedToggles, toggles);
 }
 
 list.addEventListener("click", clickHandler);

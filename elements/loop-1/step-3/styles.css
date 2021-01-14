@@ -4,81 +4,114 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	font-family: "Roboto", sans-serif;
 	font-weight: 400;
+	font-family: "Roboto", sans-serif;
 	background: linear-gradient(#dce6ef, #86a6c3);
 }
 
 ul {
-	background-color: white;
-	width: 15em;
 	list-style: none;
-	padding: 2em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 1em;
+	padding: 0;
 }
 
 ul > * + * {
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
-/* The switch - the box around the slider */
-.switch {
-	position: relative;
-	display: inline-block;
-	width: 60px;
-	height: 34px;
+/* Toggle switch
+::before generates pill
+::after thumb-thingy
+Swap left to right to swap text and toggle positioning
+*/
+
+/* Set toggle switch custom properties */
+:root {
+	--clr-unchecked: #767676;
+	--clr-checked: #36a829;
+	--clr-thumb: #fff;
+	--clr-focus: #00f;
+	--spacer: 1em;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
-
-/* The slider */
-.slider {
+/* Hide default 	 */
+.toggles [type="checkbox"] {
 	position: absolute;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Set label clickable area and toggle position inside */
+.toggles [type="checkbox"] + label {
+	position: relative;
+	display: block;
+	max-width: 100%;
+	padding: calc(var(--spacer) * 1);
+	padding-right: calc(var(--spacer) * 3);
+}
+
+/* Set height of pill and thumb-thingy */
+.toggles [type="checkbox"] + label::before,
+.toggles [type="checkbox"] + label::after {
+	position: absolute;
+	height: calc(var(--spacer) * 2);
+	transition: all 200ms cubic-bezier(1, 0, 0.55, 0.85);
+	content: "";
 	cursor: pointer;
+}
+
+/* Set width of and other pill styles */
+.toggles [type="checkbox"] + label::before {
 	top: 0;
 	left: 0;
+	width: calc(var(--spacer) * 4);
+	border: calc(var(--spacer) * 0.2) solid var(--clr-unchecked);
+	border-radius: calc(var(--spacer) * 1);
+	overflow: hidden;
+	background: var(--clr-unchecked);
+}
+
+/* Set width of and color of thumb-thingy */
+.toggles [type="checkbox"] + label::after {
+	top: 0;
 	right: 0;
-	bottom: 0;
-	background-color: #ccc;
-	transition: 0.2s;
-}
-
-.slider::before {
-	position: absolute;
-	content: "";
-	height: 32px;
-	width: 32px;
-	left: 1px;
-	bottom: 1px;
-	background-color: white;
-	transition: 0.2s;
-}
-
-input:checked + .slider {
-	background-color: #2196f3;
-}
-
-input:focus + .slider {
-	box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider::before {
-	transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-	border-radius: 34px;
-}
-
-.slider.round::before {
+	width: calc(var(--spacer) * 2);
+	border: calc(var(--spacer) * 0.1) solid var(--clr-unchecked);
 	border-radius: 50%;
+	background-color: var(--clr-thumb);
+	background-position: center center;
+}
+
+/* Change styles when checked */
+.toggles [type="checkbox"]:checked + label::after {
+	right: calc(var(--spacer, 1em) * 2);
+	border-color: var(--clr-checked);
+	color: var(--clr-checked);
+}
+
+.toggles [type="checkbox"]:checked + label::before {
+	border: calc(var(--spacer) * 0.2) solid var(--clr-checked);
+	color: var(--clr-checked);
+	background: var(--clr-checked);
+}
+
+/* Enable hover and focus states */
+.toggles [type="checkbox"]:hover + label::after {
+	margin-right: 1px;
+}
+
+.toggles [type="checkbox"]:checked:hover + label::after {
+	margin-right: -1px;
+}
+
+.toggles [type="checkbox"]:hover + label {
+	color: var(--clr-focus);
+}
+
+.toggles [type="checkbox"]:hover + label::before,
+.toggles [type="checkbox"]:focus-within + label::before {
+	box-shadow: 0 0 0 2px var(--clr-focus);
 }
