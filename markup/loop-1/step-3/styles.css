@@ -4,20 +4,20 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	font-family: "Roboto", sans-serif;
 	font-weight: 400;
+	font-family: "Roboto", sans-serif;
 	background-color: #14957b;
 }
 
 section {
 	position: relative;
 	width: 40em;
-	background-color: white;
 	padding-top: 2em;
-	padding-left: 3em;
 	padding-right: 3em;
 	padding-bottom: 15em;
+	padding-left: 3em;
 	border-radius: 0.5em;
+	background-color: white;
 }
 
 img {
@@ -26,22 +26,19 @@ img {
 }
 
 a {
-	border-radius: 50%;
-	border: solid 1px grey;
-	padding: 0.5em;
 	position: relative; /* For positioning the pseudo-element */
+	padding: 0.5em;
+	border: solid 1px grey;
+	border-radius: 50%;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
 }
 
 a::before {
-	/* Position the pseudo-element. */
-	content: " ";
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-
 	border-radius: 50%;
 
 	/* Create the box shadow at expanded size. */
@@ -50,6 +47,9 @@ a::before {
 	/* Hidden by default. */
 	opacity: 0;
 	transition: opacity 500ms;
+
+	/* Position the pseudo-element. */
+	content: " ";
 }
 
 a:hover::before {
@@ -59,8 +59,8 @@ a:hover::before {
 
 .split {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
 	margin-bottom: 1.5em;
 }
 
@@ -69,34 +69,34 @@ a:hover::before {
 }
 
 table {
-	margin-top: 5em;
 	width: 100%;
+	margin-top: 5em;
 	border-collapse: collapse;
 }
 
 th {
-	text-align: left;
-	font-weight: 700;
-	text-transform: uppercase;
-	font-size: 1.25rem;
 	padding-top: 0.75em;
 	padding-bottom: 0.75em;
+	font-weight: 700;
+	font-size: 1.25rem;
+	text-align: left;
+	text-transform: uppercase;
 }
 
 .price {
 	padding-top: 0.75em;
 	padding-bottom: 0.75em;
-	text-align: right;
-	font-size: 1.25rem;
 	font-weight: 700;
+	font-size: 1.25rem;
+	text-align: right;
 }
 
 .card__background {
-	background: url("./img/bicycle.png") no-repeat 50% 0;
-	background-size: cover;
 	position: absolute;
+	right: 0;
 	bottom: 0;
 	left: 0;
-	right: 0;
 	height: 20em;
+	background: url("./img/bicycle.png") no-repeat 50% 0;
+	background-size: cover;
 }

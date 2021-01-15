@@ -4,7 +4,64 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	background: linear-gradient(#dce6ef, #86a6c3);
+	font-weight: 500;
 	font-family: "Roboto", sans-serif;
-	font-weight: 400;
+	background: linear-gradient(#dce6ef, #86a6c3);
+	background-image: url("img/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.ticket {
+	width: 25em;
+	padding: 3em;
+	border-radius: 0.25em;
+	background-color: white;
+}
+
+.sub-heading {
+	margin-bottom: 0.25em;
+	color: hsla(120, 1%, 67%, 0.75);
+	font-weight: 700;
+	font-size: 0.85em;
+	text-transform: uppercase;
+}
+
+.sub-heading.end {
+	text-align: end;
+}
+
+.overview {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3rem;
+}
+
+.major-heading {
+	color: hsla(209, 62%, 53%, 1);
+	font-size: 3rem;
+	font-family: "Prompt", sans-serif;
+	line-height: 1;
+}
+
+.major-heading.dash {
+	color: hsla(209, 62%, 53%, 0.25);
+}
+
+.flight-details {
+	display: flex;
+	gap: 4rem;
+	margin-bottom: 2em;
+}
+
+.personal-details {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }

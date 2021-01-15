@@ -21,12 +21,12 @@
 Global styles
 ========================================================== */
 body {
-	background-color: #799bcf;
-	font-family: var(--ff-body);
-	font-size: var(--fs-400);
-	font-weight: var(--fw-400);
-	line-height: 1.8;
 	color: var(--clr-primary-100);
+	font-weight: var(--fw-400);
+	font-size: var(--fs-400);
+	font-family: var(--ff-body);
+	line-height: 1.8;
+	background-color: #799bcf;
 }
 
 .container {
@@ -38,10 +38,10 @@ body {
 }
 
 form {
-	border-radius: 1em;
 	display: flex;
 	justify-content: center;
 	padding: 2em;
+	border-radius: 1em;
 	background-color: #fff;
 }
 
@@ -65,18 +65,18 @@ Blocks
 
 button {
 	border: solid 2px var(--clr-primary-400);
-	background-color: var(--bg, inherit);
 	color: var(--fg, inherit);
+	background-color: var(--bg, inherit);
 }
 
 button:first-of-type {
-	border-radius: 0.5em 0 0 0.5em;
 	border-right: 0;
+	border-radius: 0.5em 0 0 0.5em;
 }
 
 button:last-of-type {
-	border-radius: 0 0.5em 0.5em 0;
 	border-left: 0;
+	border-radius: 0 0.5em 0.5em 0;
 }
 
 /* small screen form */
@@ -87,8 +87,8 @@ button:last-of-type {
 }
 
 select {
-	border: solid 2px var(--clr-primary-400);
 	width: 100%;
+	border: solid 2px var(--clr-primary-400);
 	color: inherit;
 }
 

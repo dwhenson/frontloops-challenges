@@ -1,102 +1,102 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Roboto, sans-serif;
-  background: #16a085;
-  font-size: 16px;
-  line-height: 18px;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: Roboto, sans-serif;
+	line-height: 18px;
+	background: #16a085;
 }
 
 .root {
-  width: 600px;
-  margin: 100px auto;
+	width: 600px;
+	margin: 100px auto;
 }
 
 .card {
-  border-radius: 4px;
-  padding: 40px 70px 200px;
-  box-shadow: 0 22px 50px rgba(14,21,47, .2), 0 8px 20px rgba(14,21,47, .2);
-  background: #fff;
-  position: relative;
+	position: relative;
+	padding: 40px 70px 200px;
+	border-radius: 4px;
+	background: #fff;
+	box-shadow: 0 22px 50px rgba(14, 21, 47, 0.2), 0 8px 20px rgba(14, 21, 47, 0.2);
 }
 
 .card__inner {
-  position: relative;
-  z-index: 2;
+	position: relative;
+	z-index: 2;
 }
 
 .card__background {
-  background: url('./img/bicycle.png') no-repeat 50% 0;
-  background-size: cover;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 280px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 280px;
+	background: url('./img/bicycle.png') no-repeat 50% 0;
+	background-size: cover;
 }
 
 .card__top {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .card__title {
-  flex-grow: 1;
-  font-size: 22px;
-  font-weight: 700;
+	flex-grow: 1;
+	font-weight: 700;
+	font-size: 22px;
 }
 
 .card__account {
-  text-decoration: none;
-  transition: box-shadow 0.2s ease-in;
-  border-radius: 50%;
-  padding: 8px;
-  border: 1px solid #dedede;
-  position: relative;
+	position: relative;
+	padding: 8px;
+	border: 1px solid #dedede;
+	border-radius: 50%;
+	text-decoration: none;
+	transition: box-shadow 0.2s ease-in;
 }
 
 .card__account:hover {
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .card__account:active {
-  top: 1px;
+	top: 1px;
 }
 
 .card__account-icon {
-  display: block;
+	display: block;
 }
 
 .card__subtitle {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #aaa;
+	margin-top: 10px;
+	color: #aaa;
+	font-size: 14px;
 }
 
 .card__order {
-  margin-top: 40px;
+	margin-top: 40px;
 }
 
 .order__item {
-  display: flex;
-  padding-bottom: 30px;
+	display: flex;
+	padding-bottom: 30px;
 }
 
 .order__item:last-child {
-  padding: 0;
+	padding: 0;
 }
 
 .order__name {
-  flex-grow: 1;
-  color: #5c5c5c;
+	flex-grow: 1;
+	color: #5c5c5c;
 }
 
 .order__price,
 .order__item_total .order__name {
-  font-size: 20px;
-  font-weight: 500;
+	font-weight: 500;
+	font-size: 20px;
 }
 
 .order__item_total .order__name {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }

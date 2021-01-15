@@ -1,21 +1,21 @@
 body {
-	font-family: "Roboto", sans-serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	overflow: hidden;
 	margin: 0;
+	overflow: hidden;
+	font-family: "Roboto", sans-serif;
 	background-color: #2575b0;
 }
 
 form {
-	background-color: white;
-	border-radius: 1em;
-	overflow: hidden;
 	width: 40em;
 	padding: 2em;
+	border-radius: 1em;
+	overflow: hidden;
+	background-color: white;
 }
 
 fieldset {
@@ -32,23 +32,23 @@ label {
 
 .index {
 	display: flex;
-	align-items: flex-end;
 	gap: 1em;
+	align-items: flex-end;
 }
 
 /* Form one */
 .index input {
-	width: 100%;
 	flex: 2 0 auto;
+	width: 100%;
+	padding: 0.5em;
 	border: none;
 	border-bottom: 2px solid grey;
-	padding: 0.5em;
 }
 
 .index button {
-	border: none;
 	flex: 1 0 auto;
 	padding: 0.75em 1em;
+	border: none;
 	border-radius: 0.5em;
 }
 
@@ -63,14 +63,14 @@ label {
 
 .tabs button {
 	display: inline-block;
-	text-decoration: none;
-	text-align: center;
-	padding: 0.75em 1em;
-	text-transform: uppercase;
 	width: 100%;
-	color: inherit;
-	background-color: inherit;
+	padding: 0.75em 1em;
 	border: none;
+	color: inherit;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	background-color: inherit;
 }
 
 .contents {
@@ -78,8 +78,8 @@ label {
 }
 
 .contents > * {
-	margin-top: 1em;
 	grid-area: 1 / 1 / 1/ 1;
+	margin-top: 1em;
 	text-align: center;
 }
 

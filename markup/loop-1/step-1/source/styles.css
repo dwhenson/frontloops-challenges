@@ -1,10 +1,10 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #85a5d4;
-	font-family: Roboto, sans-serif;
 	font-size: 13px;
+	font-family: Roboto, sans-serif;
 	line-height: 19px;
+	background: #85a5d4;
 }
 
 .root {
@@ -13,22 +13,22 @@ body {
 }
 
 .card {
+	padding: 20px;
 	border-radius: 4px;
 	background: #fff;
-	padding: 20px;
 	box-shadow: 0 22px 50px rgba(14, 21, 47, 0.2), 0 8px 20px rgba(14, 21, 47, 0.2);
 }
 
 .item {
 	display: inline-block;
-	vertical-align: top;
+	box-sizing: border-box;
 	width: 33.33%;
 	padding: 20px 40px;
-	text-align: center;
-	box-sizing: border-box;
-	text-decoration: none;
-	color: #5673d5;
 	border-radius: 4px;
+	color: #5673d5;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
 	transition: background 0.15s ease-in-out;
 }
 
@@ -42,10 +42,10 @@ body {
 }
 
 .item__title {
-	text-transform: uppercase;
-	font-size: 18px;
 	font-weight: 700;
+	font-size: 18px;
 	letter-spacing: 4px;
+	text-transform: uppercase;
 }
 
 .item__text {
@@ -54,8 +54,8 @@ body {
 }
 
 .item__value {
-	font-size: 30px;
 	font-weight: 500;
+	font-size: 30px;
 }
 
 .item__currency {

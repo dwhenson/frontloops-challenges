@@ -8,9 +8,9 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	background: linear-gradient(#dce6ef, #86a6c3);
-	font-family: "Roboto", sans-serif;
 	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	background: linear-gradient(#dce6ef, #86a6c3);
 }
 
 section {
@@ -50,11 +50,11 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: hsla(217, 57%, 60%, 1);
+	color: white;
 	font-size: 0.6em;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	color: white;
+	background-color: hsla(217, 57%, 60%, 1);
 }
 
 header h2 {
@@ -66,17 +66,17 @@ header h2::before {
 	display: inline-block;
 	width: 0.5em;
 	height: 0.5em;
-	border-radius: 50%;
 	margin-right: 1em;
+	border-radius: 50%;
 	background-color: white;
 	content: "";
 }
 
 header button {
 	border: none;
-	background-color: inherit;
-	font-size: 2rem;
 	color: inherit;
+	font-size: 2rem;
+	background-color: inherit;
 }
 
 /* Messages
@@ -98,23 +98,23 @@ header button {
 }
 
 .message time {
-	font-size: 0.8em;
 	color: grey;
+	font-size: 0.8em;
 }
 
 .message p {
 	position: relative;
-	padding: 1em;
 	margin-top: 0.25em;
+	padding: 1em;
 	background-color: var(--bg, hsla(106, 0%, 94%, 1));
 }
 
 .message p::after {
 	position: absolute;
 	top: 0;
-	border-width: 5px;
-	border-style: solid;
 	border-color: transparent;
+	border-style: solid;
+	border-width: 5px;
 	content: "";
 }
 
@@ -156,20 +156,20 @@ form {
 
 form input {
 	flex-basis: 100%;
+	margin-top: 0.5em;
 	padding-top: 1em;
 	padding-bottom: 1em;
 	border: none;
-	margin-top: 0.5em;
 }
 
 form button {
+	margin-top: 0.5em;
 	padding-right: 1em;
 	padding-left: 1em;
 	border: none;
-	margin-top: 0.5em;
-	background-color: inherit;
+	color: hsla(217, 57%, 60%, 1);
 	font-weight: 700;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	color: hsla(217, 57%, 60%, 1);
+	background-color: inherit;
 }

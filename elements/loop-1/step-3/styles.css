@@ -10,8 +10,8 @@ body {
 }
 
 ul {
-	list-style: none;
 	padding: 0;
+	list-style: none;
 }
 
 ul > * + * {
@@ -58,9 +58,9 @@ Swap left to right to swap text and toggle positioning
 .toggles [type="checkbox"] + label::after {
 	position: absolute;
 	height: calc(var(--spacer) * 2);
+	cursor: pointer;
 	transition: all 200ms cubic-bezier(1, 0, 0.55, 0.85);
 	content: "";
-	cursor: pointer;
 }
 
 /* Set width of and other pill styles */
@@ -90,6 +90,7 @@ Swap left to right to swap text and toggle positioning
 	right: calc(var(--spacer, 1em) * 2);
 	border-color: var(--clr-checked);
 	color: var(--clr-checked);
+	background-size: ;
 }
 
 .toggles [type="checkbox"]:checked + label::before {
