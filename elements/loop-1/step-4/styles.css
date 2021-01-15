@@ -1,0 +1,63 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	background-color: rebeccapurple;
+}
+
+.component {
+	background-color: white;
+	width: 75%;
+	border-radius: 1em;
+	padding: 2em;
+}
+
+.component > * + * {
+	margin-top: 1em;
+}
+
+.progress {
+	display: flex;
+}
+
+.progress > * {
+	text-align: center;
+	flex-basis: 100%;
+}
+
+.progress button {
+	margin-bottom: 0.5em;
+	border-radius: 50%;
+	border: 1px solid rebeccapurple;
+	padding: 0.5em 0.75em;
+	color: rebeccapurple;
+	font-weight: 700;
+	background-color: hsla(270, 50%, 40%, 0.1);
+}
+
+.info textarea {
+	width: 100%;
+	margin-bottom: 1em;
+	border: 2px solid rebeccapurple;
+	border-radius: 0.25em;
+}
+
+.info .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.info button {
+	width: 10em;
+	padding: 0.5em;
+	border-radius: 0.25em;
+	border: 1px solid rebeccapurple;
+	background-color: hsla(270, 50%, 40%, 0.1);
+	text-transform: uppercase;
+	font-weight: bolder;
+	color: rebeccapurple;
+}

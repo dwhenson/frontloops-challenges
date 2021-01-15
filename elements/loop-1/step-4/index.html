@@ -1,14 +1,38 @@
-<!doctype html>
-<html>
-<head>
-    <title>Progress navigation</title>
-</head>
-<body>
-    <!--
-        Create a progress navigation with previous/next buttons on each step and an overview of all steps.
-        Clicking next button on last step should bring the final screen
-        Steps in overview should be also clickable and change current step to the one click,
-        however you shouldn't be able to skip the next step, so if you're at 1 step - you can't go directly to 3.
-    -->
-</body>
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Progress navigation</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="styles.css" />
+		<script defer src="script.js"></script>
+	</head>
+	<body>
+		<div class="component">
+			<form class="progress">
+				<div class="wrapper">
+					<button>1</button>
+					<p>Choose title</p>
+				</div>
+				<div class="wrapper">
+					<button>2</button>
+					<p>Choose description</p>
+				</div>
+				<div class="wrapper">
+					<button>3</button>
+					<p>Confirm Information</p>
+				</div>
+			</form>
+			<form class="info">
+				<textarea name="content" id="content"></textarea>
+				<div class="wrapper">
+					<button>Previous</button>
+					<button>Next</button>
+				</div>
+			</form>
+		</div>
+	</body>
 </html>
