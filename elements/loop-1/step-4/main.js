@@ -11,7 +11,14 @@ function renderHTML() {
 }
 
 function activateLink(element) {
-	links.forEach((link) => link.classList.remove("active"));
+	links.forEach((link, index) => {
+		if (index > stage) {
+			link.classList.remove("active");
+		} else {
+			link.classList.add("active");
+		}
+	});
+
 	element.classList.add("active");
 	if (!element.hasAttribute("data-complete")) {
 		element.setAttribute("data-complete", "");
@@ -38,7 +45,7 @@ function progressHandler(event) {
 			(index === 0 || links[index - 1].hasAttribute("data-complete"))
 		) {
 			stage = index;
-			activateLink(event.target);
+			activateLink(link);
 		}
 	});
 }
