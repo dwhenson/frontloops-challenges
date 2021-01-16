@@ -7,6 +7,7 @@ body {
 	font-weight: 400;
 	font-family: "Roboto", sans-serif;
 	background-color: rebeccapurple;
+	color: grey;
 }
 
 .component {
@@ -14,6 +15,11 @@ body {
 	width: 75%;
 	border-radius: 1em;
 	padding: 2em;
+}
+
+.progress .active {
+	background: rebeccapurple;
+	color: white;
 }
 
 .component > * + * {
@@ -29,7 +35,9 @@ body {
 	flex-basis: 100%;
 }
 
-.progress button {
+.progress a {
+	text-decoration: none;
+	display: inline-block;
 	margin-bottom: 0.5em;
 	border-radius: 50%;
 	border: 1px solid rebeccapurple;
@@ -41,6 +49,7 @@ body {
 
 .info textarea {
 	width: 100%;
+	height: 10ex;
 	margin-bottom: 1em;
 	border: 2px solid rebeccapurple;
 	border-radius: 0.25em;
@@ -48,6 +57,7 @@ body {
 
 .info .wrapper {
 	display: flex;
+	flex-direction: row-reverse;
 	justify-content: space-between;
 }
 

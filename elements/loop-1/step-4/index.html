@@ -8,31 +8,32 @@
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="styles.css" />
-		<script defer src="script.js"></script>
+		<script defer src="main.js"></script>
 	</head>
 	<body>
 		<div class="component">
-			<form class="progress">
-				<div class="wrapper">
-					<button>1</button>
+			<ol class="progress">
+				<li class="wrapper">
+					<a class="active" href="#" data-complete>1</a>
 					<p>Choose title</p>
-				</div>
-				<div class="wrapper">
-					<button>2</button>
+				</li>
+				<li class="wrapper">
+					<a href="#">2</a>
 					<p>Choose description</p>
-				</div>
-				<div class="wrapper">
-					<button>3</button>
+				</li>
+				<li class="wrapper">
+					<a href="#">3</a>
 					<p>Confirm Information</p>
-				</div>
-			</form>
-			<form class="info">
+				</li>
+			</ol>
+			<h2 id="instruction">Please enter a title</h2>
+			<div class="info">
 				<textarea name="content" id="content"></textarea>
 				<div class="wrapper">
-					<button>Previous</button>
-					<button>Next</button>
+					<button id="next">Next</button>
+					<button id="previous">Previous</button>
 				</div>
-			</form>
+			</div>
 		</div>
 	</body>
 </html>
