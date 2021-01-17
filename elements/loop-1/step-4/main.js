@@ -2,12 +2,47 @@ const links = [...document.querySelectorAll(".progress a")];
 const next = document.querySelector("#next");
 const previous = document.querySelector("#previous");
 const instruction = document.querySelector("#instruction");
+const inputArea = document.querySelector("textarea");
+const confirm = document.querySelector(".confirm");
+let userData;
 let stage = 0;
 
 function renderHTML() {
-	if (stage === 0) instruction.textContent = `Please enter a title`;
-	if (stage === 1) instruction.textContent = `Please choose a description`;
-	if (stage === 2) instruction.textContent = `Please confirm you are happy`;
+	inputArea.value = "";
+	if (stage === 0) {
+		instruction.textContent = `Please enter a title`;
+		if (userData.title) inputArea.value = userData.title;
+	}
+	if (stage === 1) {
+		instruction.textContent = `Please choose a description`;
+		if (userData.description) inputArea.value = userData.description;
+	}
+	if (stage === 2) {
+		instruction.textContent = `Please confirm you are happy`;
+		if (userData.title && userData.description)
+			confirm.innerHTML = `
+			<p>Title: ${userData.title}</p>
+			<p>Description: ${userData.description}</p>
+		`;
+	}
+}
+
+function storeData() {
+	userData = sessionStorage.getItem("storedData")
+		? JSON.parse(sessionStorage.getItem("storedData"))
+		: {};
+
+	if (!inputArea.value) return;
+
+	if (stage === 1) {
+		userData.title = inputArea.value;
+	}
+	if (stage === 2) {
+		userData.description = inputArea.value;
+	}
+
+	const userDataString = JSON.stringify(userData);
+	sessionStorage.setItem("storedData", userDataString);
 }
 
 function activateLink(element) {
@@ -23,6 +58,8 @@ function activateLink(element) {
 	if (!element.hasAttribute("data-complete")) {
 		element.setAttribute("data-complete", "");
 	}
+
+	storeData();
 	renderHTML();
 }
 

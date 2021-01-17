@@ -4,22 +4,22 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
+	color: grey;
 	font-weight: 400;
 	font-family: "Roboto", sans-serif;
 	background-color: rebeccapurple;
-	color: grey;
 }
 
 .component {
-	background-color: white;
 	width: 75%;
-	border-radius: 1em;
 	padding: 2em;
+	border-radius: 1em;
+	background-color: white;
 }
 
 .progress .active {
-	background: rebeccapurple;
 	color: white;
+	background: rebeccapurple;
 }
 
 .component > * + * {
@@ -31,19 +31,19 @@ body {
 }
 
 .progress > * {
-	text-align: center;
 	flex-basis: 100%;
+	text-align: center;
 }
 
 .progress a {
-	text-decoration: none;
 	display: inline-block;
 	margin-bottom: 0.5em;
-	border-radius: 50%;
-	border: 1px solid rebeccapurple;
 	padding: 0.5em 0.75em;
+	border: 1px solid rebeccapurple;
+	border-radius: 50%;
 	color: rebeccapurple;
 	font-weight: 700;
+	text-decoration: none;
 	background-color: hsla(270, 50%, 40%, 0.1);
 }
 
@@ -64,10 +64,15 @@ body {
 .info button {
 	width: 10em;
 	padding: 0.5em;
-	border-radius: 0.25em;
 	border: 1px solid rebeccapurple;
-	background-color: hsla(270, 50%, 40%, 0.1);
-	text-transform: uppercase;
-	font-weight: bolder;
+	border-radius: 0.25em;
 	color: rebeccapurple;
+	font-weight: bolder;
+	text-transform: uppercase;
+	background-color: hsla(270, 50%, 40%, 0.1);
+}
+
+textarea {
+	padding: 1em;
+	font-size: 1.5rem;
 }
