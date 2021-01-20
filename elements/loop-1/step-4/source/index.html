@@ -1,115 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Progress navigation</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    <div class="container">
-        <div class="progress js-progress">
-            <div class="progress__steps">
-                <div class="progress__step progress__step--active js-progress__step">
-                    <div class="progress__number">1</div>
-                    <div class="progress__name">Choose title</div>
-                </div>
-                <div class="progress__step js-progress__step">
-                    <div class="progress__number">2</div>
-                    <div class="progress__name">Choose description</div>
-                </div>
-                <div class="progress__step js-progress__step">
-                    <div class="progress__number">3</div>
-                    <div class="progress__name">Confirm data</div>
-                </div>
-            </div>
-            <div class="progress__inner">
-                <div class="progress__content progress__content--active js-progress__content">
-                    <div class="progress__text">Choose title content</div>
-                    <button class="button js-progress__next">Submit title</button>
-                </div>
-                <div class="progress__content js-progress__content">
-                    <div class="progress__text">Choose description content</div>
-                    <button class="button js-progress__previous">Back</button>
-                    <button class="button button--primary js-progress__next">Submit description</button>
-                </div>
-                <div class="progress__content js-progress__content">
-                    <div class="progress__text">Are you happy now?</div>
+	<head>
+		<title>Progress navigation</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="progress js-progress">
+				<div class="progress__steps">
+					<div class="progress__step progress__step--active js-progress__step">
+						<div class="progress__number">1</div>
+						<div class="progress__name">Choose title</div>
+					</div>
+					<div class="progress__step js-progress__step">
+						<div class="progress__number">2</div>
+						<div class="progress__name">Choose description</div>
+					</div>
+					<div class="progress__step js-progress__step">
+						<div class="progress__number">3</div>
+						<div class="progress__name">Confirm data</div>
+					</div>
+				</div>
+				<div class="progress__inner">
+					<div
+						class="progress__content progress__content--active js-progress__content"
+					>
+						<div class="progress__text">Choose title content</div>
+						<button class="button js-progress__next">Submit title</button>
+					</div>
+					<div class="progress__content js-progress__content">
+						<div class="progress__text">Choose description content</div>
+						<button class="button js-progress__previous">Back</button>
+						<button class="button button--primary js-progress__next">
+							Submit description
+						</button>
+					</div>
+					<div class="progress__content js-progress__content">
+						<div class="progress__text">Are you happy now?</div>
 
-                    <button class="button js-progress__previous">No, go back</button>
-                    <button class="button button--primary js-progress__next">Yes, go ahead</button>
-                </div>
-                <div class="progress__content js-progress__content">
-                    Ok, we're done. Thanks for sending us your data!
-                </div>
-            </div>
-        </div>
-    </div>
+						<button class="button js-progress__previous">No, go back</button>
+						<button class="button button--primary js-progress__next">
+							Yes, go ahead
+						</button>
+					</div>
+					<div class="progress__content js-progress__content">
+						Ok, we're done. Thanks for sending us your data!
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!--
+		<!--
         It's inlined here because js files can't be sent with email (even in zip). Normally would be in a separate file.
     -->
-    <script>
-        (function() {
-            const modifiers = {
-                stepActive: 'progress__step--active',
-                contentActive: 'progress__content--active'
-            };
+		<script>
+			(function () {
+				const modifiers = {
+					stepActive: "progress__step--active",
+					contentActive: "progress__content--active",
+				};
 
-            const elRoot = document.querySelector('.js-progress');
-            const elsStep = elRoot.querySelectorAll('.js-progress__step');
-            const elsNext = elRoot.querySelectorAll('.js-progress__next');
-            const elsPrevious = elRoot.querySelectorAll('.js-progress__previous');
-            const elsContent = elRoot.querySelectorAll('.js-progress__content');
+				const elRoot = document.querySelector(".js-progress");
+				const elsStep = elRoot.querySelectorAll(".js-progress__step");
+				const elsNext = elRoot.querySelectorAll(".js-progress__next");
+				const elsPrevious = elRoot.querySelectorAll(".js-progress__previous");
+				const elsContent = elRoot.querySelectorAll(".js-progress__content");
 
-            // Store current selected index in this variable
-            let currentIndex = 0;
+				// Store current selected index in this variable
+				let currentIndex = 0;
 
-            // Function to update component based on currentIndex
-            const updateRender = () => {
-                // Set all steps that have smaller index than the current one
-                elsStep.forEach((el, index) => {
-                    el.classList.toggle(modifiers.stepActive, index <= currentIndex);
-                });
+				// Function to update component based on currentIndex
+				const updateRender = () => {
+					// Set all steps that have smaller index than the current one
+					elsStep.forEach((el, index) => {
+						el.classList.toggle(modifiers.stepActive, index <= currentIndex);
+					});
 
-                // Make content with the same index as the current one active
-                elsContent.forEach((el, index) => {
-                    el.classList.toggle(modifiers.contentActive, index === currentIndex);
-                });
-            };
+					// Make content with the same index as the current one active
+					elsContent.forEach((el, index) => {
+						el.classList.toggle(modifiers.contentActive, index === currentIndex);
+					});
+				};
 
-            elsStep.forEach((el, index) => {
-                //  Whenever you click a step in overview
-                el.addEventListener('click', e => {
-                    e.preventDefault();
+				elsStep.forEach((el, index) => {
+					//  Whenever you click a step in overview
+					el.addEventListener("click", (e) => {
+						e.preventDefault();
 
-                    // Check if you don't skip the next step
-                    if (index - currentIndex >= 2) return;
+						// Check if you don't skip the next step
+						if (index - currentIndex >= 2) return;
 
-                    // Otherwise update index and render
-                    currentIndex = index;
-                    updateRender();
-                });
-            });
+						// Otherwise update index and render
+						currentIndex = index;
+						updateRender();
+					});
+				});
 
-            // Whenever next button is clicked
-            elsNext.forEach(el => {
-                el.addEventListener('click', e => {
-                    e.preventDefault();
-                    // Update index (maximum is then the number of content blocks you have) and render
-                    currentIndex = Math.min(elsContent.length - 1, currentIndex + 1);
-                    updateRender();
-                })
-            });
+				// Whenever next button is clicked
+				elsNext.forEach((el) => {
+					el.addEventListener("click", (e) => {
+						e.preventDefault();
+						// Update index (maximum is then the number of content blocks you have) and render
+						currentIndex = Math.min(elsContent.length - 1, currentIndex + 1);
+						updateRender();
+					});
+				});
 
-            // Whenever previous button is clicked
-            elsPrevious.forEach(el => {
-                el.addEventListener('click', e => {
-                    e.preventDefault();
-                    // Update index (minimum is 0) and render
-                    currentIndex = Math.max(0, currentIndex - 1);
-                    updateRender();
-                });
-            });
-        })();
-    </script>
-</body>
+				// Whenever previous button is clicked
+				elsPrevious.forEach((el) => {
+					el.addEventListener("click", (e) => {
+						e.preventDefault();
+						// Update index (minimum is 0) and render
+						currentIndex = Math.max(0, currentIndex - 1);
+						updateRender();
+					});
+				});
+			})();
+		</script>
+	</body>
 </html>

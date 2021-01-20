@@ -33,7 +33,6 @@ function storeData() {
 		: {};
 
 	if (!inputArea.value) return;
-
 	if (stage === 1) {
 		userData.title = inputArea.value;
 	}

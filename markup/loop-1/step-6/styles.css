@@ -1,0 +1,66 @@
+body {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	color: hsla(180, 5.95%, 63.73%, 1);
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 300;
+	color: black;
+}
+
+/* 	==================================================
+		Utilities
+		================================================== */
+
+.container {
+	padding-left: 6rem;
+	padding-right: 6rem;
+}
+
+.flow-section > * + * {
+	margin-top: 4rem;
+}
+
+.flow-content > * + * {
+	margin-top: 1rem;
+}
+
+.flex {
+	display: flex;
+	position: relative;
+}
+
+/* 	==================================================
+		Blocks
+		================================================== */
+
+/* 	Buttons
+   	================================================== */
+
+button {
+	background-color: white;
+	width: 100%;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	color: inherit;
+	font-weight: 700;
+	border: 1px solid darkgray;
+	border-radius: 0.25em;
+}
+
+img {
+	position: absolute;
+	left: 1.5em;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* 	Footer
+   	================================================== */
+
+footer {
+	padding-top: 3rem;
+	border-top: 1px solid darkgray;
+}

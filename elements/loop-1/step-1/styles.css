@@ -1,7 +1,7 @@
 :root {
 	/* colors */
-	--clr-primary-100: #767676;
-	--clr-primary-400: #4f68c6;
+	--clr-primary-100: rgba(118, 118, 118, 1);
+	--clr-primary-400: rgba(79, 104, 198, 1);
 
 	/* spacing */
 	--spacer: 1.5em;
@@ -17,16 +17,18 @@
 	--ff-body: "Roboto", sans-serif;
 }
 
+/* FIX */
+
 /* ==========================================================
 Global styles
 ========================================================== */
 body {
-	color: var(--clr-primary-100);
-	font-weight: var(--fw-400);
-	font-size: var(--fs-400);
+	background-color: rgba(121, 155, 207, 1);
 	font-family: var(--ff-body);
+	font-size: var(--fs-400);
+	font-weight: var(--fw-400);
 	line-height: 1.8;
-	background-color: #799bcf;
+	color: var(--clr-primary-100);
 }
 
 .container {
@@ -42,7 +44,7 @@ form {
 	justify-content: center;
 	padding: 2em;
 	border-radius: 1em;
-	background-color: #fff;
+	background-color: rgba(255, 255, 255, 1);
 }
 
 /* ==========================================================
@@ -51,7 +53,7 @@ Utilities
 
 .accent {
 	--bg: var(--clr-primary-400);
-	--fg: #fff;
+	--fg: rgba(255, 255, 255, 1);
 }
 
 /* ==========================================================
@@ -65,8 +67,8 @@ Blocks
 
 button {
 	border: solid 2px var(--clr-primary-400);
-	color: var(--fg, inherit);
 	background-color: var(--bg, inherit);
+	color: var(--fg, inherit);
 }
 
 button:first-of-type {

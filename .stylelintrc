@@ -1,6 +1,6 @@
 {
-	"extends": "stylelint-config-rational-order",
-	"plugins": ["stylelint-scss"],
+	"extends": "stylelint-config-standard",
+	"plugins": ["stylelint-order", "stylelint-scss"],
 	"rules": {
 		"at-rule-empty-line-before": [
 			"always",
@@ -122,11 +122,6 @@
 		"value-list-comma-newline-after": "always-multi-line",
 		"value-list-comma-space-after": "always-single-line",
 		"value-list-comma-space-before": "never",
-		"value-list-max-empty-lines": 0,
-		"order/properties-order": [],
-    "plugin/rational-order": [true, {
-      "border-in-box-model": true,
-      "empty-line-between-groups": false,
-    }],
+		"value-list-max-empty-lines": 0
 	}
 }
