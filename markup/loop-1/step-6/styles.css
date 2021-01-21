@@ -3,6 +3,7 @@
 		================================================== */
 
 body {
+	display: flex;
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	color: hsla(180, 5.95%, 63.73%, 1);
@@ -15,10 +16,16 @@ h1 {
 }
 
 section {
-	max-width: 60%;
+	width: 60%;
 	margin-top: 6rem;
 	flex-direction: column;
 	min-height: calc(100vh - 6rem);
+}
+
+.background-image {
+	width: 40%;
+	background-image: url("img/side.jpg");
+	background-size: cover;
 }
 
 /* 	==================================================
