@@ -427,10 +427,13 @@ config.codekit3
 .ntvs_analysis.dat
 node_modules/
 
-## Design files
+## frontend mentor
 *.sketch
 *.xd
 *.fig
+
+## frontloops
+source/
 
 ## nova files
 .nova/
