@@ -1,3 +1,7 @@
+/* 	==================================================
+		Global Styles
+		================================================== */
+
 body {
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
@@ -10,17 +14,28 @@ h1 {
 	color: black;
 }
 
+section {
+	max-width: 60%;
+	margin-top: 6rem;
+	flex-direction: column;
+	min-height: calc(100vh - 6rem);
+}
+
+/* 	==================================================
+		Composition
+		================================================== */
+
 /* 	==================================================
 		Utilities
 		================================================== */
 
 .container {
-	padding-left: 6rem;
 	padding-right: 6rem;
+	padding-left: 6rem;
 }
 
 .flow-section > * + * {
-	margin-top: 4rem;
+	margin-top: 6rem;
 }
 
 .flow-content > * + * {
@@ -28,8 +43,8 @@ h1 {
 }
 
 .flex {
-	display: flex;
 	position: relative;
+	display: flex;
 }
 
 /* 	==================================================
@@ -40,27 +55,39 @@ h1 {
    	================================================== */
 
 button {
-	background-color: white;
 	width: 100%;
-	padding: 1em 2em;
-	text-transform: uppercase;
-	color: inherit;
-	font-weight: 700;
+	padding: 1.5em 2em;
 	border: 1px solid darkgray;
 	border-radius: 0.25em;
+	background-color: white;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: inherit;
+	cursor: pointer;
 }
 
 img {
 	position: absolute;
-	left: 1.5em;
 	top: 50%;
+	left: 1.5em;
 	transform: translateY(-50%);
 }
 
 /* 	Footer
    	================================================== */
 
-footer {
+footer.flex {
 	padding-top: 3rem;
+	padding-bottom: 3rem;
 	border-top: 1px solid darkgray;
+	margin-top: auto;
+	font-weight: 700;
+	color: black;
+	justify-content: space-between;
+}
+
+footer button {
+	padding: 0;
+	border: none;
+	max-width: max-content;
 }
